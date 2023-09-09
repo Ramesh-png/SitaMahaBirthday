@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="./css/style2.css">
+    <title>Document</title>
+</head>
+<body class="bg">
+
+    <audio autoplay loop>
+        <source src="images/bg crackers.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+
+
+<!-- <div class="container">
+    <div class="d-flex justify-content-center align-items-center" ></div>
+    <div id="video-container2">
+        <video class="video" autoplay loop>
+            <source src="images/y2mate.com - Happy Birthday Song For Special Day Happy Birthday To You _1080p (online-video-cutter.com).mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+</div> -->
+
+
+    
+ <a href="index.html">
+    <img src="images/fxr9.gif" alt="" class="img-fluid fadeInLeft  ">
+    <img src="images/fxr9.gif" alt="" class="img-fluid hide fadeInFromTop">
+    <img src="images/fxr9.gif" alt="" class="img-fluid hide fadeInRight">
+</a>
+    <div class="container-fluid mb-5">
+        <div class="shadow fadeInBounce">
+    <p class="typewriter"> 
+        <span data-text="HAPPY BIRTHDAY SITA MAHALAKSHMI"></span>
+      </p>
+    </div>
+    </div> 
+     
+    
+    
+    
+  
+</body>
+<script>
+    var span = document.querySelector(".typewriter span");
+var textArr = span.getAttribute("data-text").split(", "); 
+var maxTextIndex = textArr.length; 
+
+var sPerChar = 0.15; 
+var sBetweenWord = 1.5;
+var textIndex = 0; 
+
+typing(textIndex, textArr[textIndex]); 
+
+function typing(textIndex, text) {
+    var charIndex = 0; 
+    var maxCharIndex = text.length - 1; 
+    
+    var typeInterval = setInterval(function () {
+        span.innerHTML += text[charIndex]; 
+        if (charIndex == maxCharIndex) {
+            clearInterval(typeInterval);
+            setTimeout(function() { deleting(textIndex, text) }, sBetweenWord * 1000); 
+            
+        } else {
+            charIndex += 1; 
+        }
+    }, sPerChar * 1000); 
+}
+
+function deleting(textIndex, text) {
+    var minCharIndex = 0; 
+    var charIndex = text.length - 1; 
+
+    var typeInterval = setInterval(function () {
+        span.innerHTML = text.substr(0, charIndex); 
+        if (charIndex == minCharIndex) {
+            clearInterval(typeInterval);
+            textIndex + 1 == maxTextIndex ? textIndex = 0 : textIndex += 1; 
+            setTimeout(function() { typing(textIndex, textArr[textIndex]) }, sBetweenWord * 1000); 
+        } else {
+            charIndex -= 1; 
+        }
+    }, sPerChar * 1000); 
+}
+</script>
+
+ 
+</html>
